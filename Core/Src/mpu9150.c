@@ -46,6 +46,16 @@ void mpu9150_read_gyro (imu *i, int16_t *dest)
 }
 
 
+void mpu9150_read_accel (imu *i, int16_t *dest)
+{
+	uint8_t raw_data[6];
+	mpu9150_read(i, MPU9150_ACCEL_XOUT_H, raw_data, sizeof(raw_data));
+	dest[0] = (int16_t)((raw_data[0] << 8) | (raw_data[1]));
+	dest[1] = (int16_t)((raw_data[2] << 8) | (raw_data[3]));
+	dest[2] = (int16_t)((raw_data[4] << 8) | (raw_data[5]));
+}
+
+
 void mpu9150_init (imu *i)
 {
 	// reset

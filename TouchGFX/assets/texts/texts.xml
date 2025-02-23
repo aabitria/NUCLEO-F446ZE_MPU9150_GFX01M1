@@ -6,6 +6,36 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_43F2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Accel Z:</Translation>
+      </Text>
+      <Text Id="__SingleUse_0857" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">00000</Translation>
+      </Text>
+      <Text Id="__SingleUse_EVKD" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OH4B" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Accel Y:</Translation>
+      </Text>
+      <Text Id="__SingleUse_RXE0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">00000</Translation>
+      </Text>
+      <Text Id="__SingleUse_TNXN" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_TL77" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Accel X:</Translation>
+      </Text>
+      <Text Id="__SingleUse_LSI4" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Raw Accel Readings</Translation>
+      </Text>
+      <Text Id="__SingleUse_8WKH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">00000</Translation>
+      </Text>
+      <Text Id="__SingleUse_50C2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_27N5" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Raw Gyro Readings</Translation>
       </Text>

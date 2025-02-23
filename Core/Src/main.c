@@ -129,6 +129,8 @@ int main(void)
 	  {
 		  read_imu_flag = 0;
 		  mpu9150_read_gyro(&mpu9150_imu, &mpu9150_imu.gyro_x);
+
+		  mpu9150_read_accel(&mpu9150_imu, &mpu9150_imu.accel_x);
 	  }
     /* USER CODE END WHILE */
 

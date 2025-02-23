@@ -37,6 +37,7 @@ static inline void mpu9150_read(imu *i, uint16_t reg_addr, uint8_t *buf, uint16_
 }
 
 void mpu9150_read_gyro (imu *i, int16_t *dest);
+void mpu9150_read_accel (imu *i, int16_t *dest);
 void mpu9150_init (imu *i);
 
 

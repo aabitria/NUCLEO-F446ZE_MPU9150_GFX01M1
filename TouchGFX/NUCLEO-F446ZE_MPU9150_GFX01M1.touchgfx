@@ -10,8 +10,8 @@
             "Width": 320,
             "Height": 240,
             "Color": {
-              "Red": 156,
-              "Green": 171,
+              "Red": 120,
+              "Green": 142,
               "Blue": 240
             }
           },
@@ -108,7 +108,168 @@
             }
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "Name": "UP"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 1,
+              "Name": "DOWN"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 320,
+            "Height": 240,
+            "Color": {
+              "Red": 86,
+              "Green": 245,
+              "Blue": 165
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2",
+            "X": 26,
+            "Y": 174,
+            "Width": 81,
+            "Height": 24,
+            "TextId": "__SingleUse_43F2",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2_1",
+            "X": 124,
+            "Y": 174,
+            "Width": 65,
+            "Height": 24,
+            "TextId": "__SingleUse_EVKD",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_0857",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 26,
+            "Y": 136,
+            "Width": 77,
+            "Height": 24,
+            "TextId": "__SingleUse_OH4B",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "X": 124,
+            "Y": 136,
+            "Width": 65,
+            "Height": 24,
+            "TextId": "__SingleUse_TNXN",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_RXE0",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 26,
+            "Y": 99,
+            "Width": 81,
+            "Height": 24,
+            "TextId": "__SingleUse_TL77",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_4",
+            "X": 63,
+            "Y": 37,
+            "Width": 197,
+            "Height": 24,
+            "TextId": "__SingleUse_LSI4",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_3",
+            "X": 124,
+            "Y": 99,
+            "Width": 65,
+            "Height": 24,
+            "TextId": "__SingleUse_50C2",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_8WKH",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "Name": "UP"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 1,
+              "Name": "DOWN"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [],
@@ -138,7 +299,15 @@
         "Height": 240
       }
     ],
-    "PhysicalButtons": [],
+    "PhysicalButtons": [
+      {
+        "Name": "UP"
+      },
+      {
+        "Key": 1,
+        "Name": "DOWN"
+      }
+    ],
     "FrameworkFeatures": {
       "LCD16bpp": {
         "Id": "LCD16bpp",

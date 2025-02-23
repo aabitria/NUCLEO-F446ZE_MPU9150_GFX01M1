@@ -19,8 +19,7 @@ void Screen1View::tearDownScreen()
 
 void Screen1View::display_raw_gyro(short *gyro)
 {
-	char str[5] = {0};
-	//int16_t end_arc, start_arc = -120;
+	char str[6] = {0};
 
 	snprintf(str, sizeof(str), "%d", gyro[0]);
 	Unicode::snprintf(textArea1_3Buffer, TEXTAREA1_3_SIZE, str);

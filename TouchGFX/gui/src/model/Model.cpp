@@ -20,6 +20,7 @@ void Model::tick()
 	if (cnt == 10)
 	{
 		modelListener->get_raw_gyro((short *)&mpu9150_imu.gyro_x);
+		modelListener->get_raw_accel((short *)&mpu9150_imu.accel_x);
 		cnt = 0;
 	}
 }

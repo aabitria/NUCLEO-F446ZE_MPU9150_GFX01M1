@@ -16,6 +16,8 @@ public:
     }
 
     virtual void get_raw_gyro (short *gyro) {}
+
+    virtual void get_raw_accel (short *accel) {}
 protected:
     Model* model;
 };

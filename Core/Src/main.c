@@ -30,6 +30,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "gfx01m1_lcd.h"
+#include "mpu9150.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,7 +51,14 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+extern I2C_HandleTypeDef hi2c1;
 
+imu mpu9150_imu = {
+	.hi2c = &hi2c1,
+	.dev_addr = 0x68,
+};
+
+uint8_t read_imu_flag = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -107,8 +115,21 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //mpu9150_read(&mpu9150_imu, MPU9150_WHO_AM_I, &addr, sizeof(addr));
+  //if (addr != 0x68)
+  //{
+//	  while(1);
+  //}
+
+  mpu9150_init(&mpu9150_imu);
+
   while (1)
   {
+	  if (read_imu_flag == 1)
+	  {
+		  read_imu_flag = 0;
+		  mpu9150_read_gyro(&mpu9150_imu, &mpu9150_imu.gyro_x);
+	  }
     /* USER CODE END WHILE */
 
   MX_TouchGFX_Process();
@@ -183,6 +204,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if (htim->Instance == TIM4)
 	{
 		/* Set flag to read & update IMU data */
+		read_imu_flag = 1;
 		return;
 	}
 }

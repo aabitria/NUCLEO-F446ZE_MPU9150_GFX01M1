@@ -60,7 +60,8 @@ Screen1ViewBase::Screen1ViewBase()
     textArea1_3.setXY(124, 99);
     textArea1_3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1_3.setLinespacing(0);
-    textArea1_3.setWildcard(touchgfx::TypedText(T___SINGLEUSE_S0W7).getText());
+    Unicode::snprintf(textArea1_3Buffer, TEXTAREA1_3_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_S0W7).getText());
+    textArea1_3.setWildcard(textArea1_3Buffer);
     textArea1_3.resizeToCurrentText();
     textArea1_3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L54X));
     add(textArea1_3);

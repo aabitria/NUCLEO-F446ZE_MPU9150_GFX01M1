@@ -16,3 +16,8 @@ void Screen1Presenter::deactivate()
 {
 
 }
+
+void Screen1Presenter::get_raw_gyro (short *gyro)
+{
+	view.display_raw_gyro(gyro);
+}

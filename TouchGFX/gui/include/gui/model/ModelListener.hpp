@@ -14,6 +14,8 @@ public:
     {
         model = m;
     }
+
+    virtual void get_raw_gyro (short *gyro) {}
 protected:
     Model* model;
 };

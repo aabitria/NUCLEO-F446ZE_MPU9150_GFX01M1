@@ -15,6 +15,7 @@ public:
 
     void tick();
 protected:
+    int cnt = 0;
     ModelListener* modelListener;
 };
 

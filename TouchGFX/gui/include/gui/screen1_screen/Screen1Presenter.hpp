@@ -27,6 +27,8 @@ public:
 
     virtual ~Screen1Presenter() {}
 
+    virtual void get_raw_gyro (short *gyro);
+
 private:
     Screen1Presenter();
 

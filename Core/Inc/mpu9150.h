@@ -30,6 +30,15 @@ typedef struct imu_
 	int16_t accel_y_raw;
 	int16_t accel_z_raw;
 
+	/* offsets */
+	int16_t gyro_x_offset;
+	int16_t gyro_y_offset;
+	int16_t gyro_z_offset;
+
+	int16_t accel_x_offset;
+	int16_t accel_y_offset;
+	int16_t accel_z_offset;
+
 	/* gyro processed readings (deg/s) */
 	float   gyro_x;
 	float   gyro_y;
@@ -51,6 +60,7 @@ static inline void mpu9150_read(imu *i, uint16_t reg_addr, uint8_t *buf, uint16_
 }
 
 
+void mpu9150_calibrate (imu *i);
 void mpu9150_convert_from_raw (imu *i);
 void mpu9150_read_gyro (imu *i, int16_t *dest);
 void mpu9150_read_accel (imu *i, int16_t *dest);

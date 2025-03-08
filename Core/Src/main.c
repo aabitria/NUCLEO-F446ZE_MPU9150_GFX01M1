@@ -123,6 +123,8 @@ int main(void)
 
   mpu9150_init(&mpu9150_imu);
 
+  mpu9150_calibrate(&mpu9150_imu);
+
   while (1)
   {
 	  if (read_imu_flag == 1)

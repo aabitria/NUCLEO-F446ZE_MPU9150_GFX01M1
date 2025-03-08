@@ -102,6 +102,14 @@ void mpu9150_read_accel (imu *i, int16_t *dest)
 
 void mpu9150_convert_from_raw (imu *i)
 {
+	i->gyro_x_raw -= i->gyro_x_offset;
+	i->gyro_y_raw -= i->gyro_y_offset;
+	i->gyro_z_raw -= i->gyro_z_offset;
+
+	i->accel_x_raw -= i->accel_x_offset;
+	i->accel_y_raw -= i->accel_y_offset;
+	i->accel_z_raw -= i->accel_z_offset;
+
 	i->gyro_x = (float)i->gyro_x_raw / i->gyro_sf;
 	i->gyro_y = (float)i->gyro_y_raw / i->gyro_sf;
 	i->gyro_z = (float)i->gyro_z_raw / i->gyro_sf;
@@ -109,6 +117,69 @@ void mpu9150_convert_from_raw (imu *i)
 	i->accel_x = (float)i->accel_x_raw / i->accel_sf;
 	i->accel_y = (float)i->accel_y_raw / i->accel_sf;
 	i->accel_z = (float)i->accel_z_raw / i->accel_sf;
+}
+
+
+int16_t calib_data[3 * 128] = {0};
+
+void mpu9150_calibrate (imu *i)
+{
+	int num_readings = 128;
+	int32_t gx_offset = 0, gy_offset = 0, gz_offset = 0;
+	int32_t ax_offset = 0, ay_offset = 0, az_offset = 0;
+	int16_t *dest = NULL;
+
+	dest = calib_data;
+	for (int idx = 0; idx < num_readings; idx++)
+	{
+		mpu9150_read_gyro(i, dest);
+		dest += 3;
+		HAL_Delay(4);
+	}
+
+	// use data from 65th sample to 128th
+	for (int idx = 0; idx < 64; idx++)
+	{
+		dest = &calib_data[(idx + 64) * 3];
+		gx_offset += (int32_t)*dest;
+		gy_offset += (int32_t)*(dest + 1);
+		gz_offset += (int32_t)*(dest + 2);
+	}
+
+	gx_offset >>= 6;
+	gy_offset >>= 6;
+	gz_offset >>= 6;
+
+	i->gyro_x_offset = gx_offset;
+	i->gyro_y_offset = gy_offset;
+	i->gyro_z_offset = gz_offset;
+
+	/* calibrate for accel */
+	/* assumption is that board is lying on level field, 9150 chip up */
+	dest = calib_data;
+	for (int idx = 0; idx < num_readings; idx++)
+	{
+		mpu9150_read_accel(i, dest);
+		dest += 3;
+		HAL_Delay(4);
+	}
+
+	// use data from 65th sample to 128th
+	for (int idx = 0; idx < 64; idx++)
+	{
+		dest = &calib_data[(idx + 64) * 3];
+		ax_offset += (int32_t)*dest;
+		ay_offset += (int32_t)*(dest + 1);
+		az_offset += (int32_t)*(dest + 2) - 8192; 	// - 1g;
+	}
+
+	ax_offset >>= 6;
+	ay_offset >>= 6;
+	az_offset >>= 6;
+
+	i->accel_x_offset = ax_offset;
+	i->accel_y_offset = ay_offset;
+	i->accel_z_offset = az_offset;
 }
 
 

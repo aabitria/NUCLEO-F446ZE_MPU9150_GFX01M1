@@ -18,6 +18,8 @@ public:
     virtual void get_raw_gyro (short *gyro) {}
 
     virtual void get_raw_accel (short *accel) {}
+
+    virtual void get_sensor_val (float *val) {}
 protected:
     Model* model;
 };

@@ -94,4 +94,17 @@
 
 #define MPU9150_DEV_ADDR 				0x68
 
+/* Gyro full-scale range masks */
+#define MPU9150_GC_FSEL0 				(0x0 << 3)		// +/-250deg/s
+#define MPU9150_GC_FSEL1 				(0x1 << 3)		// +/-500deg/s
+#define MPU9150_GC_FSEL2 				(0x2 << 3)		// +/-1000deg/s
+#define MPU9150_GC_FSEL3 				(0x3 << 3)		// +/-2000deg/s
+
+/* Accel full-scale range masks */
+#define MPU9150_AC_AFSEL0 				(0x0 << 3)		// +/-2g
+#define MPU9150_AC_AFSEL1 				(0x1 << 3)		// +/-4g
+#define MPU9150_AC_AFSEL2 				(0x2 << 3)		// +/-8g
+#define MPU9150_AC_AFSEL3 				(0x3 << 3)		// +/-16g
+
+
 #endif /* INC_MPU9150_REGS_H_ */

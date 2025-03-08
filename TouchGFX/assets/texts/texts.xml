@@ -6,6 +6,63 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_NFRI" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Accel Z (g)</Translation>
+      </Text>
+      <Text Id="__SingleUse_4OWU" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_VAC4" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_IYMI" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Accel Y (g)</Translation>
+      </Text>
+      <Text Id="__SingleUse_HQ58" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_YO60" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_BHUO" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Accel X (g)</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y65G" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_UIF0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_DLS1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Gyro Z (deg/s)</Translation>
+      </Text>
+      <Text Id="__SingleUse_KRQA" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_V2WT" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_XF4Y" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Gyro Y (deg/s)</Translation>
+      </Text>
+      <Text Id="__SingleUse_7I6W" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_DC49" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_DCKY" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Gyro X (deg/s)</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q6HV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Converted Readings</Translation>
+      </Text>
+      <Text Id="__SingleUse_7ZA6" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.0000</Translation>
+      </Text>
+      <Text Id="__SingleUse_65SB" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_43F2" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Accel Z:</Translation>
       </Text>

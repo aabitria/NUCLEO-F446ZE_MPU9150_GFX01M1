@@ -17,13 +17,27 @@ typedef struct imu_
 	I2C_HandleTypeDef *hi2c;
 	uint16_t dev_addr;
 
-	int16_t gyro_x;
-	int16_t gyro_y;
-	int16_t gyro_z;
+	/* sensitivity factor, not full-scale value */
+	float gyro_sf;
+	float accel_sf;
 
-	int16_t accel_x;
-	int16_t accel_y;
-	int16_t accel_z;
+	/* raw readings */
+	int16_t gyro_x_raw;
+	int16_t gyro_y_raw;
+	int16_t gyro_z_raw;
+
+	int16_t accel_x_raw;
+	int16_t accel_y_raw;
+	int16_t accel_z_raw;
+
+	/* gyro processed readings (deg/s) */
+	float   gyro_x;
+	float   gyro_y;
+	float   gyro_z;
+
+	float   accel_x;
+	float   accel_y;
+	float   accel_z;
 } imu;
 
 static inline void mpu9150_write(imu *i, uint16_t reg_addr, uint8_t *buf, uint16_t buf_len)
@@ -36,6 +50,8 @@ static inline void mpu9150_read(imu *i, uint16_t reg_addr, uint8_t *buf, uint16_
 	HAL_I2C_Mem_Read(i->hi2c, (i->dev_addr) << 1, reg_addr, 1, buf, buf_len, 2);
 }
 
+
+void mpu9150_convert_from_raw (imu *i);
 void mpu9150_read_gyro (imu *i, int16_t *dest);
 void mpu9150_read_accel (imu *i, int16_t *dest);
 void mpu9150_init (imu *i);

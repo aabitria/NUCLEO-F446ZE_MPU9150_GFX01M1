@@ -112,8 +112,7 @@
           {
             "InteractionName": "Interaction1",
             "Trigger": {
-              "Type": "TriggerPhysicalButtonClicked",
-              "Name": "UP"
+              "Type": "TriggerPhysicalButtonClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -125,8 +124,7 @@
             "InteractionName": "Interaction2",
             "Trigger": {
               "Type": "TriggerPhysicalButtonClicked",
-              "ButtonKey": 1,
-              "Name": "DOWN"
+              "ButtonKey": 1
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -247,6 +245,220 @@
           {
             "InteractionName": "Interaction1",
             "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen3"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked",
+              "ButtonKey": 1
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen3",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 320,
+            "Height": 240,
+            "Color": {
+              "Red": 245,
+              "Green": 112,
+              "Blue": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2",
+            "X": 29,
+            "Y": 110,
+            "Width": 150,
+            "Height": 24,
+            "TextId": "__SingleUse_DLS1",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2_1",
+            "X": 192,
+            "Y": 110,
+            "Width": 72,
+            "Height": 24,
+            "TextId": "__SingleUse_V2WT",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_KRQA",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 29,
+            "Y": 83,
+            "Width": 148,
+            "Height": 24,
+            "TextId": "__SingleUse_XF4Y",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "X": 192,
+            "Y": 84,
+            "Width": 72,
+            "Height": 24,
+            "TextId": "__SingleUse_DC49",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_7I6W",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 29,
+            "Y": 59,
+            "Width": 150,
+            "Height": 24,
+            "TextId": "__SingleUse_DCKY",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_4",
+            "X": 63,
+            "Y": 18,
+            "Width": 201,
+            "Height": 24,
+            "TextId": "__SingleUse_Q6HV",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_3",
+            "X": 192,
+            "Y": 59,
+            "Width": 72,
+            "Height": 24,
+            "TextId": "__SingleUse_65SB",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_7ZA6",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2_2",
+            "X": 29,
+            "Y": 189,
+            "Width": 109,
+            "Height": 24,
+            "TextId": "__SingleUse_NFRI",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2_1_1",
+            "X": 192,
+            "Y": 189,
+            "Width": 72,
+            "Height": 24,
+            "TextId": "__SingleUse_VAC4",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_4OWU",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_2",
+            "X": 29,
+            "Y": 163,
+            "Width": 107,
+            "Height": 24,
+            "TextId": "__SingleUse_IYMI",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1_1",
+            "X": 192,
+            "Y": 163,
+            "Width": 72,
+            "Height": 24,
+            "TextId": "__SingleUse_YO60",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_HQ58",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_5",
+            "X": 29,
+            "Y": 138,
+            "Width": 109,
+            "Height": 24,
+            "TextId": "__SingleUse_BHUO",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_3_1",
+            "X": 192,
+            "Y": 138,
+            "Width": 72,
+            "Height": 24,
+            "TextId": "__SingleUse_UIF0",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_Y65G",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
               "Type": "TriggerPhysicalButtonClicked",
               "Name": "UP"
             },
@@ -266,7 +478,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Screen1"
+              "ActionComponent": "Screen2"
             }
           }
         ]

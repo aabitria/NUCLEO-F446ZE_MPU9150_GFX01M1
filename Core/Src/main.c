@@ -128,9 +128,11 @@ int main(void)
 	  if (read_imu_flag == 1)
 	  {
 		  read_imu_flag = 0;
-		  mpu9150_read_gyro(&mpu9150_imu, &mpu9150_imu.gyro_x);
+		  mpu9150_read_gyro(&mpu9150_imu, &mpu9150_imu.gyro_x_raw);
 
-		  mpu9150_read_accel(&mpu9150_imu, &mpu9150_imu.accel_x);
+		  mpu9150_read_accel(&mpu9150_imu, &mpu9150_imu.accel_x_raw);
+
+		  mpu9150_convert_from_raw(&mpu9150_imu);
 	  }
     /* USER CODE END WHILE */
 

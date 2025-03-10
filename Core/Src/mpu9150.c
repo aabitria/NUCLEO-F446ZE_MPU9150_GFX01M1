@@ -8,6 +8,7 @@
 
 #include "mpu9150_regs.h"
 #include "mpu9150.h"
+#include "math.h"
 
 
 static void mpu9150_reset (imu *i)
@@ -182,6 +183,21 @@ void mpu9150_calibrate (imu *i)
 	i->accel_z_offset = az_offset;
 }
 
+/* Complementary filter */
+void mpu9150_get_angle (imu *i)
+{
+	const float alpha = 0.95;
+	const float alpha_c = 1.0 - alpha;
+
+	i->angle_accl_x = atan(-i->accel_x / sqrt(pow(i->accel_y, 2) + pow(i->accel_z, 2)));
+	i->angle_accl_x *= 57.2958f;
+
+	i->angle_accl_y = atan(i->accel_y / sqrt(pow(i->accel_x, 2) + pow(i->accel_z, 2)));
+	i->angle_accl_y *= 57.2958f;
+
+	i->angle_x = (alpha * (i->angle_x + i->gyro_x * 0.005)) + (alpha_c * i->angle_accl_y);
+	i->angle_y = (alpha * (i->angle_y + i->gyro_y * 0.005)) + (alpha_c * i->angle_accl_x);
+}
 
 void mpu9150_init (imu *i)
 {

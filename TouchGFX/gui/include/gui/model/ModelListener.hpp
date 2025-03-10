@@ -20,6 +20,8 @@ public:
     virtual void get_raw_accel (short *accel) {}
 
     virtual void get_sensor_val (float *val) {}
+
+    virtual void get_angle (float *val) {}
 protected:
     Model* model;
 };

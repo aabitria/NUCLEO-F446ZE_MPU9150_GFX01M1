@@ -22,6 +22,7 @@ void Model::tick()
 		modelListener->get_raw_gyro((short *)&mpu9150_imu.gyro_x_raw);
 		modelListener->get_raw_accel((short *)&mpu9150_imu.accel_x_raw);
 		modelListener->get_sensor_val(&mpu9150_imu.gyro_x);
+		modelListener->get_angle(&mpu9150_imu.angle_x);
 		cnt = 0;
 	}
 }

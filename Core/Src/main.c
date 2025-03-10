@@ -56,6 +56,8 @@ extern I2C_HandleTypeDef hi2c1;
 imu mpu9150_imu = {
 	.hi2c = &hi2c1,
 	.dev_addr = 0x68,
+	.angle_x = 0.0f,
+	.angle_y = 0.0f,
 };
 
 uint8_t read_imu_flag = 0;
@@ -135,6 +137,8 @@ int main(void)
 		  mpu9150_read_accel(&mpu9150_imu, &mpu9150_imu.accel_x_raw);
 
 		  mpu9150_convert_from_raw(&mpu9150_imu);
+
+		  mpu9150_get_angle(&mpu9150_imu);
 	  }
     /* USER CODE END WHILE */
 

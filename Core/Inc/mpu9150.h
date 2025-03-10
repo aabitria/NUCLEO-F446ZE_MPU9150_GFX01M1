@@ -47,6 +47,12 @@ typedef struct imu_
 	float   accel_x;
 	float   accel_y;
 	float   accel_z;
+
+	float   angle_accl_x;
+	float	angle_accl_y;
+
+	float   angle_x;
+	float	angle_y;
 } imu;
 
 static inline void mpu9150_write(imu *i, uint16_t reg_addr, uint8_t *buf, uint16_t buf_len)
@@ -60,6 +66,7 @@ static inline void mpu9150_read(imu *i, uint16_t reg_addr, uint8_t *buf, uint16_
 }
 
 
+void mpu9150_get_angle (imu *i);
 void mpu9150_calibrate (imu *i);
 void mpu9150_convert_from_raw (imu *i);
 void mpu9150_read_gyro (imu *i, int16_t *dest);

@@ -186,7 +186,7 @@ void mpu9150_calibrate (imu *i)
 /* Complementary filter */
 void mpu9150_get_angle (imu *i)
 {
-	const float alpha = 0.95;
+	const float alpha = 0.98;
 	const float alpha_c = 1.0 - alpha;
 
 	i->angle_accl_x = atan(-i->accel_x / sqrt(pow(i->accel_y, 2) + pow(i->accel_z, 2)));

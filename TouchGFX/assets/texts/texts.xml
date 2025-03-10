@@ -31,7 +31,7 @@
         <Translation Language="GB">Accel Z (g)</Translation>
       </Text>
       <Text Id="__SingleUse_4OWU" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0.0</Translation>
+        <Translation Language="GB">0.000</Translation>
       </Text>
       <Text Id="__SingleUse_VAC4" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -40,7 +40,7 @@
         <Translation Language="GB">Accel Y (g)</Translation>
       </Text>
       <Text Id="__SingleUse_HQ58" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0.0</Translation>
+        <Translation Language="GB">0.000</Translation>
       </Text>
       <Text Id="__SingleUse_YO60" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -49,7 +49,7 @@
         <Translation Language="GB">Accel X (g)</Translation>
       </Text>
       <Text Id="__SingleUse_Y65G" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0.0</Translation>
+        <Translation Language="GB">0.000</Translation>
       </Text>
       <Text Id="__SingleUse_UIF0" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -58,7 +58,7 @@
         <Translation Language="GB">Gyro Z (deg/s)</Translation>
       </Text>
       <Text Id="__SingleUse_KRQA" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0.0</Translation>
+        <Translation Language="GB">0.000</Translation>
       </Text>
       <Text Id="__SingleUse_V2WT" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -67,7 +67,7 @@
         <Translation Language="GB">Gyro Y (deg/s)</Translation>
       </Text>
       <Text Id="__SingleUse_7I6W" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0.0</Translation>
+        <Translation Language="GB">0.000</Translation>
       </Text>
       <Text Id="__SingleUse_DC49" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -79,7 +79,7 @@
         <Translation Language="GB">Converted Readings</Translation>
       </Text>
       <Text Id="__SingleUse_7ZA6" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">0.0</Translation>
+        <Translation Language="GB">0.000</Translation>
       </Text>
       <Text Id="__SingleUse_65SB" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;value&gt;</Translation>

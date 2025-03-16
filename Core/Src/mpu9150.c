@@ -31,7 +31,7 @@ static void mpu9150_config (imu *i)
 	mpu9150_write(i, MPU9150_CONFIG, &param, sizeof(uint8_t));
 
 	// Set up gyro and accel config
-	param = MPU9150_GC_FSEL1;
+	param = MPU9150_GC_FSEL2;
 	mpu9150_write(i, MPU9150_GYRO_CONFIG, &param, sizeof(uint8_t));
 	switch (param)
 	{
@@ -55,7 +55,7 @@ static void mpu9150_config (imu *i)
 		i->gyro_sf = 1.0f;
 	}
 
-	param = MPU9150_AC_AFSEL1;
+	param = MPU9150_AC_AFSEL2;
 	mpu9150_write(i, MPU9150_ACCEL_CONFIG, &param, sizeof(uint8_t));
 	switch (param)
 	{
@@ -171,7 +171,7 @@ void mpu9150_calibrate (imu *i)
 		dest = &calib_data[(idx + 64) * 3];
 		ax_offset += (int32_t)*dest;
 		ay_offset += (int32_t)*(dest + 1);
-		az_offset += (int32_t)*(dest + 2) - 8192; 	// - 1g;
+		az_offset += (int32_t)*(dest + 2) - i->accel_sf; 	// - 1g;
 	}
 
 	ax_offset >>= 6;
@@ -195,8 +195,9 @@ void mpu9150_get_angle (imu *i)
 	i->angle_accl_y = atan(i->accel_y / sqrt(pow(i->accel_x, 2) + pow(i->accel_z, 2)));
 	i->angle_accl_y *= 57.2958f;
 
-	i->angle_x = (alpha * (i->angle_x + i->gyro_x * 0.005)) + (alpha_c * i->angle_accl_y);
-	i->angle_y = (alpha * (i->angle_y + i->gyro_y * 0.005)) + (alpha_c * i->angle_accl_x);
+	// Sampling rate is 250Hz, so dt = 1/250 = 0.004s
+	i->angle_x = (alpha * (i->angle_x + i->gyro_x * 0.004)) + (alpha_c * i->angle_accl_y);
+	i->angle_y = (alpha * (i->angle_y + i->gyro_y * 0.004)) + (alpha_c * i->angle_accl_x);
 }
 
 void mpu9150_init (imu *i)
